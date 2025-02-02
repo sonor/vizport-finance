@@ -12,20 +12,21 @@ export const WidgetEvents = () => {
 
   useEffect(() => {
     const onRouteExecutionStarted = (route: Route) => {
-      console.log('onRouteExecutionStarted fired.');
+      console.log('onRouteExecutionStarted fired with route:', route);
     };
     const onRouteExecutionUpdated = (update: RouteExecutionUpdate) => {
-      console.log('onRouteExecutionUpdated fired.');
+      console.log('onRouteExecutionUpdated fired with update:', update);
     };
     const onRouteExecutionCompleted = (route: Route) => {
-      console.log('onRouteExecutionCompleted fired.');
+      console.log('onRouteExecutionCompleted fired with route:', route);
     };
     const onRouteExecutionFailed = (update: RouteExecutionUpdate) => {
-      console.log('onRouteExecutionFailed fired.');
+      console.log('onRouteExecutionFailed fired with update:', update);
     };
     const onRouteHighValueLoss = (update: RouteHighValueLossUpdate) => {
-      console.log('onRouteHighValueLoss continued.');
+      console.log('onRouteHighValueLoss fired with update:', update);
     };
+
     widgetEvents.on(WidgetEvent.RouteExecutionStarted, onRouteExecutionStarted);
     widgetEvents.on(WidgetEvent.RouteExecutionUpdated, onRouteExecutionUpdated);
     widgetEvents.on(
@@ -34,7 +35,10 @@ export const WidgetEvents = () => {
     );
     widgetEvents.on(WidgetEvent.RouteHighValueLoss, onRouteHighValueLoss);
     widgetEvents.on(WidgetEvent.RouteExecutionFailed, onRouteExecutionFailed);
-    return () => widgetEvents.all.clear();
+
+    return () => {
+      widgetEvents.all.clear();
+    };
   }, [widgetEvents]);
 
   return null;
