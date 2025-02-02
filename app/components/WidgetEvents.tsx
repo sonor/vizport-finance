@@ -1,10 +1,10 @@
 'use client';
-import type { Route } from '@LIFI/sdk';
+import type { Route } from '@lifi/sdk';
 import type {
   RouteExecutionUpdate,
   RouteHighValueLossUpdate,
-} from '@LIFI/widget';
-import { WidgetEvent, useWidgetEvents } from '@LIFI/widget';
+} from '@lifi/widget';
+import { WidgetEvent, useWidgetEvents } from '@lifi/widget';
 import { useEffect } from 'react';
 
 export const WidgetEvents = () => {
