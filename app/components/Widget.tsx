@@ -6,11 +6,12 @@ import { ClientOnly } from './ClientOnly';
 
 export function Widget() {
   const config = {
-    appearance: 'light',
+    appearance: 'dark',
     theme: {
       container: {
         boxShadow: '0px 8px 32px rgba(0, 0, 0, 0.08)',
         borderRadius: '16px',
+
       },
     },
   } as Partial<WidgetConfig>;
